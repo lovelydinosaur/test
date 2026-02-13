@@ -6,8 +6,19 @@ Installable by including the URL in the `mkdocs.toml` config...
 
 ```toml
 [mkdocs]
-resources = [
-    {url="https://github.com/lovelydinosaur/mkdocs-theme/archive/refs/heads/main.zip"},
-    {directory="docs"},
+nav = [
+    {path="README.md", title="Readme"}
 ]
+
+[loaders]
+theme = "https://github.com/lovelydinosaur/mkdocs-theme/archive/refs/heads/main.zip"
+docs = "dir://docs"
+```
+
+The default theme is also included in the installable package, and can be loaded directly...
+
+```toml
+[loaders]
+theme = "pkg://mkdocs/default"
+docs = "dir://docs"
 ```
